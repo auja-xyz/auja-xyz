@@ -37,7 +37,7 @@ html {
   
 @media screen and (max-width: 600px) and (min-width: 301px){
     .title {
-        font-size: 48px;
+        font-size: 56px;
     }
 }
 
@@ -47,7 +47,7 @@ html {
     }
 }
 
-body {
+body, a {
     background-color: $color-dark;
     color: $color-light-grey;
     font-family: $secondary-font-family;
@@ -91,6 +91,7 @@ p {
 a {
     color: inherit;
     text-decoration: inherit;
+    font-size: 1rem;
 }
 
 .main {
@@ -130,7 +131,7 @@ a {
 }
 
 .button {
-    border-radius: 9%;
+    border-radius: 5%;
     color: $color-white;
     border: 1px solid $color-white;
     padding: 0.5em;
