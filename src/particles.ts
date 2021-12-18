@@ -177,6 +177,7 @@ export const particlesConfig = {
           },
           "color": {
             "value": ["#E6261F", "#EB7532", "#FFDA4A", "#7DB42B", "#3B4FE1", "#B02DC2"],
+            //"value": "#FAFAFA",
             "animation": {
               "h": {
                 "count": 0,

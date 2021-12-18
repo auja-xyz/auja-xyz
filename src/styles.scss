@@ -25,8 +25,31 @@ $color-purple: #B02DC2;
     box-sizing: border-box;
 }
 
-html {
-    font-size: 16px;
+@media screen and (min-width: 601px) {
+    html {
+        font-size: 16px;
+    }
+    .title {
+        font-size: 72px;
+    }
+}
+  
+@media screen and (max-width: 600px) and (min-width: 301px){
+    html {
+        font-size: 4vw;
+    }
+    .title {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    html {
+        font-size: 7vw;
+    }
+    .title {
+        font-size: 48px;
+    }
 }
 
 body {
@@ -70,26 +93,65 @@ p {
     font-size: 2rem;
 }
 
-.main-container {
-    position: relative;
+a {
+    color: inherit;
+    text-decoration: inherit;
 }
 
-.tsparticles, .tsparticles > canvas {
-    position: absolute !important;
-    z-index: 1 !important;
-    pointer-events: none;
+.main {
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-container {
+    max-width: 100vw;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20%;
+    background-color: rgba(26, 26, 26, 0.85);
+}
+
+#tsparticles, #tsparticles > canvas {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    z-index: -1;
 }
 
 .parent-container {
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 100;
-    top: 0px;
-    left: 0px;
+    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; 
 }
 
-.child-container {
-    color: white;
+.button {
+    border-radius: 9%;
+    color: $color-white;
+    border: 1px solid $color-white;
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: $color-dark;
+    transition-property: background-color color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: $color-white;
+    color: $color-dark;
+    border: 1px solid $color-dark;
+    transition-property: background-color color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
 }
