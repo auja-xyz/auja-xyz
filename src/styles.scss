@@ -47,7 +47,7 @@ html {
     }
 }
 
-body, a {
+body {
     background-color: $color-dark;
     color: $color-light-grey;
     font-family: $secondary-font-family;
@@ -89,9 +89,13 @@ p {
 }
 
 a {
-    color: inherit;
-    text-decoration: inherit;
+    color: $color-white;
+    text-decoration: none;
     font-size: 1rem;
+}
+
+a:hover {
+    color: $color-dark;
 }
 
 .main {
@@ -145,9 +149,17 @@ a {
 
 .button:hover {
     background-color: $color-white;
-    color: $color-dark;
     border: 1px solid $color-dark;
     transition-property: background-color color;
     transition-timing-function: ease-in-out;
     transition-duration: 0.5s;
 }
+
+.button:hover a {
+    background-color: $color-white;
+    color: $color-dark;
+    transition-property: background-color color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s; 
+}
+
