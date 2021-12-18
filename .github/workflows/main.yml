@@ -1,0 +1,52 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: '17.x'
+    - run: npm ci
+    - run: npm run build
+    - run: npm run test
+    - name: Upload builds artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: builds
+        path: dist/
+        retention-days: 1
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+    - name: Download builds artifacts to be deployed
+      uses: actions/download-artifact@v2
+      with:
+        name: builds
+    - name: Create CNAME file with custom domain
+      run: |
+        echo "auja.xyz" > CNAME
+    - name: Init git and commit builds artifacts
+      run: |
+        git init
+        git add -A
+        git config --local user.email "action-bot@github.com"
+        git config --local user.name "GitHub Action Bot"
+        git commit -m 'auto deploy'
+    - name: Deploy artifacts
+      uses: ad-m/github-push-action@v0.5.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: builds
+        force: true
+        directory: .
