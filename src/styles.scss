@@ -129,7 +129,7 @@ a:hover {
 .parent-container {
     padding: 1em;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap; 
 }
@@ -155,11 +155,4 @@ a:hover {
     transition-duration: 0.5s;
 }
 
-.button:hover a {
-    background-color: $color-white;
-    color: $color-dark;
-    transition-property: background-color color;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.5s; 
-}
 
