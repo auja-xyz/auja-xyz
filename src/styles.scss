@@ -25,28 +25,23 @@ $color-purple: #B02DC2;
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+}
+
 @media screen and (min-width: 601px) {
-    html {
-        font-size: 16px;
-    }
     .title {
         font-size: 72px;
     }
 }
   
 @media screen and (max-width: 600px) and (min-width: 301px){
-    html {
-        font-size: 4vw;
-    }
     .title {
         font-size: 48px;
     }
 }
 
 @media screen and (max-width: 300px) {
-    html {
-        font-size: 7vw;
-    }
     .title {
         font-size: 48px;
     }
