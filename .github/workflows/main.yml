@@ -18,7 +18,7 @@ jobs:
     - run: npm run build
     - run: npm run test
     - name: Upload builds artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: builds
         path: dist/
@@ -30,7 +30,7 @@ jobs:
 
     steps:
     - name: Download builds artifacts to be deployed
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: builds
     - name: Create CNAME file with custom domain
